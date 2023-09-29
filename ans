@@ -1,0 +1,63 @@
+
+
+```python
+# Question 1
+def evenly_divisible(a, b, c):
+    total = 0
+    for num in range(a, b + 1):
+        if num % c == 0:
+            total += num
+    return total
+
+# Question 2
+def correct_signs(expression):
+    return eval(expression)
+
+# Question 3
+def replace_vowels(input_str, replacement_char):
+    vowels = "AEIOUaeiou"
+    for vowel in vowels:
+        input_str = input_str.replace(vowel, replacement_char)
+    return input_str
+
+# Question 4
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Question 5
+def hamming_distance(str1, str2):
+    if len(str1) != len(str2):
+        raise ValueError("Strings must have the same length")
+    
+    distance = 0
+    for i in range(len(str1)):
+        if str1[i] != str2[i]:
+            distance += 1
+    return distance
+
+# Examples
+print(evenly_divisible(1, 10, 20))  # 0
+print(evenly_divisible(1, 10, 2))   # 30
+print(evenly_divisible(1, 10, 3))   # 18
+
+print(correct_signs("3 < 7 < 11"))  # True
+print(correct_signs("13 > 44 > 33 > 1"))  # False
+print(correct_signs("1 < 2 < 6 < 9 > 3"))  # True
+
+print(replace_vowels("the aardvark", "#"))  # "th# ##rdv#rk"
+print(replace_vowels("minnie mouse", "?"))  # "m?nn?? m??s?"
+print(replace_vowels("shakespeare", "*"))   # "sh*k*sp**r*"
+
+print(factorial(5))  # 120
+print(factorial(3))  # 6
+print(factorial(1))  # 1
+print(factorial(0))  # 1
+
+print(hamming_distance("abcde", "bcdef"))  # 5
+print(hamming_distance("abcde", "abcde"))  # 0
+print(hamming_distance("strong", "strung"))  # 1
+```
+
